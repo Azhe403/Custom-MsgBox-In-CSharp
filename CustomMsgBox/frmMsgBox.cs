@@ -8,6 +8,13 @@ using System.Text;
 using System.Windows.Forms;
 using System.Drawing.Drawing2D;
 
+// Create Custom MessageBox in C#
+// Version 1.0
+// Update : Saturday, 14 January 2016
+// (c) 2017 Azhe403, Inc. Allright Reserved
+// This is Open Source :D
+
+
 namespace CustomMsgBox
 {
     public partial class frmMsgBox : Form
@@ -16,14 +23,16 @@ namespace CustomMsgBox
         public frmMsgBox()
         {
             InitializeComponent();
-            Width = SystemInformation.WorkingArea.Width;
+            Width = SystemInformation.WorkingArea.Width;  // Set Width of MsgBox to Screen Width
         }
 
+        // Add enum Button
         internal enum enumMessageButton
         {
             OK, YesNo, RetryCancel
         }
 
+        // Add enum Icon
         internal enum enumMessageIcon
         {
             Error, Warning, Information, Question
@@ -36,6 +45,7 @@ namespace CustomMsgBox
             base.OnPaint(e);
         }
 
+        // Set Message in MsgBox
         private void setMessage(string Message)
         {
             //int number = Math.Abs(Message.Length / 30);
@@ -44,6 +54,7 @@ namespace CustomMsgBox
             this.lblMessage.Text = Message;
         }
 
+        // Add Button in MsgBox like Ok, YesNo, RetryCancel, etc
         private void addButton(enumMessageButton MessageButton)
         {
             int btnTop = pnlMain.Height - 40;
@@ -94,6 +105,7 @@ namespace CustomMsgBox
             }
         }
 
+        // Add Image Icon for MsgBox
         private void AddIconImage(enumMessageIcon MessageIcon)
         {
             switch (MessageIcon)
@@ -110,6 +122,7 @@ namespace CustomMsgBox
             }
         }
 
+        // Return Dialog Result
         internal static DialogResult View(string Message, string Title, enumMessageIcon Icon, enumMessageButton Button)
         {
             frmMsgBox MsgBox = new frmMsgBox();
@@ -120,12 +133,6 @@ namespace CustomMsgBox
             MsgBox.ShowDialog();
 
             return MsgBox.DialogResult;
-        }
-
-
-        private void frmMsgBox_Load(object sender, EventArgs e)
-        {
-
         }
 
     }
