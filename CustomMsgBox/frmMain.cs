@@ -19,7 +19,7 @@ namespace CustomMsgBox
         private void button1_Click(object sender, EventArgs e)
         {
            //frmMsgBox.Show("Test Message", "Title", frmMsgBox.enumMessageIcon.Information, frmMsgBox.enumMessageButton.YesNo);
-           label1.Text = "Dialog Result : "+ frmMsgBox.View("Test Message", "Title", frmMsgBox.enumMessageIcon.Information, frmMsgBox.enumMessageButton.OK).ToString();
+           label1.Text = "Dialog Result : "+ frmMsgBox.View("Test Message", "Title", frmMsgBox.enumMessageIcon.Information, frmMsgBox.enumMessageButton.RetryCancel).ToString();
         }
     }
 }

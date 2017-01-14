@@ -96,8 +96,8 @@ namespace CustomMsgBox
 
                         Button btnCancel = new Button();
                         btnCancel.Text = "Batal";
-                        btnCancel.DialogResult = DialogResult.Retry;
-                        btnRetry.SetBounds(pnlMain.Width - 120, btnTop, btnWidth, btnHeight);
+                        btnCancel.DialogResult = DialogResult.Cancel;
+                        btnCancel.SetBounds(pnlMain.Width - 120, btnTop, btnWidth, btnHeight);
                         pnlMain.Controls.Add(btnCancel);
                                        
                     }
